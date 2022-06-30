@@ -1,0 +1,13 @@
+Covid Case Tracker
+
+Features
+	Retrieve real time & Historical data
+	Process data 
+	Store in Database 
+	Visualize on a Dashboard.
+Tools
+	A programming language that gives us the ability to connect to MySQL database and online APIs or other resources
+	GitHub: collaboration tool and version control
+	MySQL database; cloud-based and local access from local device and Grafana.
+	Dashboard tool: Grafana, Power BI, or Tableau. 
+
