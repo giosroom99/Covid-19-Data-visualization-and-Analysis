@@ -123,20 +123,19 @@ def realtime(real_time_url,mydb,countries,today):
                     message=errdb
                     Status_Report(code,message)
                     send_update(code,message)
+        
+            except KeyError:
+                print(KeyError,' for ',country)
+                code="Error in country{0}".format(country)
+                message=KeyError
+                Status_Report(code,message)
+               # send_update(code,message)
+               
         else:
             message="API request error: "+reason
             code ="Error "+status
             Status_Report(code,message)
             send_update(code,message)
-
-                
-
-        except KeyError:
-            print(KeyError,' for ',country)
-            code="Error in country{0}".format(country)
-            message=KeyError
-            Status_Report(code,message)
-           # send_update(code,message)
             
 
 
