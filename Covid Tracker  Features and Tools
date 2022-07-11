@@ -1,15 +1,19 @@
-Covid Case Tracker
-join slack workspace: https://join.slack.com/t/slack-b7o2261/shared_invite/zt-1brp7lycz-WU_odi25M9sjV65vUiM4pQ
+Covid-19 Data analysis and Visualization -Web based app.
+Features: 
+Display covid-19 data for every continent and most their countries. 
+•	Case status: Confirmed, Deaths, and Recovered
+•	Total Populations per country and continents
+•	Map view and other useful charts.
 
+Technology used in this Project:
+•	MySQL database cloud hosted
+•	STMP mail server cloud hosted
+•	Linux Virtual Machine cloud hosted
+•	Grafana Server cloud hosted
+•	NGINX web server
+A Python Program (Script) runs every day at certain times to fetch all covid-19 data from an Open-Source API. The python program also runs a mail server to send email update when a certain event occurs in the backend. 
 
-Features
-	Retrieve real time & Historical data
-	Process data 
-	Store in Database 
-	Visualize on a Dashboard.
-Tools
-	A programming language that gives us the ability to connect to MySQL database and online APIs or other resources
-	GitHub: collaboration tool and version control
-	MySQL database; cloud-based and local access from local device and Grafana.
-	Dashboard tool: Grafana, Power BI, or Tableau. 
+The MySQL data stores data fetched by the python scripts remotely.
+
+Grafana helps analyze and visualize data store in the database. The Grafana server is hosted on Linux virtual machine in the cloud. The dashboard is accessible through giosroom.space while using NGINX as a webserver.
 
