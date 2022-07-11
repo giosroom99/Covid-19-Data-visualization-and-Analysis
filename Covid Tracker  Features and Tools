@@ -20,3 +20,4 @@ The MySQL data stores data fetched by the python scripts remotely.
 Grafana helps analyze and visualize data store in the database. The Grafana server is hosted on Linux virtual machine in the cloud. 
 The dashboard is accessible through giosroom.space while using NGINX as a webserver.
 
+Email: giosroom@gmail.com to request access to view dashboard. 
