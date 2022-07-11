@@ -23,8 +23,5 @@ Email: giosroom@gmail.com to request access to view dashboard.
 Sample Dashboard
 ![Dashboard](https://github.com/Moodkiller20/Covid-Case-Tracker./blob/main/Grafana/Africa/Africa%20Detail%20view%20.png)
 
-by Giovanni Tshibangu
-
-![image](https://user-images.githubusercontent.com/61130107/178341807-b6edca00-cb59-4401-85d1-834a3a12a6f2.png)
 
 
