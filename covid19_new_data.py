@@ -24,6 +24,8 @@ def driver():
     print(mydb) # Print DB object
 
     realtime(real_time_url,mydb,countries,today) # This function collect real time data from API
+    Status_Report("Finish"+today,"ALL Fectched")
+    send_update("Finish"+today,"ALL Fectched")
     
 
 
@@ -34,16 +36,27 @@ def get_countries():
     lit_of_countries = []
     try:
         response = requests.get(url)
-        data = response.text
-        parse_json = json.loads(data)
-        country_data = parse_json['data']
-        for c in country_data:
-            lit_of_countries.append(c['country'])
+        status = response.status_code
+        reason = response.reason
+        if(status ==200):
+            data = response.text
+            parse_json = json.loads(data)
+            country_data = parse_json['data']
+            for c in country_data:
+                lit_of_countries.append(c['country'])
+            lit_of_countries.append('US')
+            print("United State have been added to the list")
 
-        message="Countries Fetched"
-        code ="Success"
-        Status_Report(code,message)
-        return lit_of_countries
+            message="Countries Fetched"
+            code ="Success"
+            Status_Report(code,message)
+            return lit_of_countries
+        else:
+            message="API request error: "+reason
+            code ="Error "+status
+            Status_Report(code,message)
+            send_update(code,message)
+            
         
     except BaseException as error: 
         print("An error has occured while trying to get country list.",error)
@@ -63,7 +76,7 @@ def db_connect():
             database=key.get('DATABASE')
         )
         code="Sucess"
-        message="Database connected"
+        message="Connecion to DB was a success"
         Status_Report(code,message)
         send_update(code,message)
         return mydb
@@ -79,33 +92,43 @@ def db_connect():
 def realtime(real_time_url,mydb,countries,today):
     for country in  countries:
         response = requests.get(real_time_url+country)
+        response = requests.get(url)
+        status = response.status_code
+        reason = response.reason
         data = response.text
 
-        try:
-            parse_json = json.loads(data)
-            all = parse_json["All"]
-
-            deaths = all["deaths"]
-            confirmed = all["confirmed"]
-            recovered = all["recovered"]
-            population = all["population"]
-            Continent = all["continent"]
-            print("Date:{6}, Continent: {0}, Contry: {1}, Population: {2}, Confirmed: {3}, Deaths: {4}, Recovered: {5}".format(Continent,country,population,confirmed,recovered,deaths, today))
-            
+        if(status ==200):
             try:
-                sql = 'INSERT INTO covid_data (Last_updated,Continent, country,population, deaths, confirmed, recorvered) VALUES (%s,%s,%s,%s,%s,%s,%s)'
-                val=(today,Continent,country,population,deaths,confirmed,recovered)
-                mycursor = mydb.cursor()
-                mycursor.execute(sql,val)
-                mydb.commit()
-                print(country, "Task completed, db.commit")
-               
-            except mysql.connector.Error as errdb:
-                print("An error has occured in the database Insertion. \n Error: ",errdb)
-                code="Error DB Insert"
-                message=errdb
-                Status_Report(code,message)
-                send_update(code,message)
+                parse_json = json.loads(data)
+                all = parse_json["All"]
+
+                deaths = all["deaths"]
+                confirmed = all["confirmed"]
+                recovered = all["recovered"]
+                population = all["population"]
+                Continent = all["continent"]
+                print("Date:{6}, Continent: {0}, Contry: {1}, Population: {2}, Confirmed: {3}, Deaths: {4}, Recovered: {5}".format(Continent,country,population,confirmed,recovered,deaths, today))
+
+                try:
+                    sql = 'INSERT INTO covid_data (Last_updated,Continent, country,population, deaths, confirmed, recorvered) VALUES (%s,%s,%s,%s,%s,%s,%s)'
+                    val=(today,Continent,country,population,deaths,confirmed,recovered)
+                    mycursor = mydb.cursor()
+                    mycursor.execute(sql,val)
+                    mydb.commit()
+                    print(country, "Task completed, db.commit")
+
+                except mysql.connector.Error as errdb:
+                    print("An error has occured in the database Insertion. \n Error: ",errdb)
+                    code="Error DB Insert"
+                    message=errdb
+                    Status_Report(code,message)
+                    send_update(code,message)
+        else:
+            message="API request error: "+reason
+            code ="Error "+status
+            Status_Report(code,message)
+            send_update(code,message)
+
                 
 
         except KeyError:
