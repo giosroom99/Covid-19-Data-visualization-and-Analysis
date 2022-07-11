@@ -1,0 +1,30 @@
+# Covid-19 Data analysis and Visualization -Web based app.
+### Features: 
+Display covid-19 data for every continent and most their countries. 
+* Case status: Confirmed, Deaths, and Recovered
+* Total Populations per country and continents
+* Map view and other useful charts.
+
+### Technology used in this Project:
+* MySQL database cloud hosted
+* STMP mail server cloud hosted
+* Linux Virtual Machine cloud hosted
+* Grafana Server cloud hosted
+* NGINX web server
+
+[Python Program](https://github.com/Moodkiller20/Covid-Case-Tracker./wiki/Python-Program)
+
+[MySQL Server](https://github.com/Moodkiller20/Covid-Case-Tracker./wiki/MySQL-Server)
+
+[Grafana Server](https://github.com/Moodkiller20/Covid-Case-Tracker./wiki/Grafana-Server)
+
+Email: giosroom@gmail.com to request access to view dashboard. 
+
+Sample Dashboard
+![Dashboard](https://github.com/Moodkiller20/Covid-Case-Tracker./blob/main/Grafana/Africa/Africa%20Detail%20view%20.png)
+
+by Giovanni Tshibangu
+
+![image](https://user-images.githubusercontent.com/61130107/178341807-b6edca00-cb59-4401-85d1-834a3a12a6f2.png)
+
+
