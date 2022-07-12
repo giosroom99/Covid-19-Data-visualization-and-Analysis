@@ -21,7 +21,7 @@ Display covid-19 data for every continent and most their countries.
 Email: giosroom@gmail.com to request access to view dashboard. 
 
 Sample Dashboard
-![Dashboard](https://github.com/Moodkiller20/Covid-Case-Tracker./blob/main/Grafana/Africa/Africa%20Detail%20view%20.png)
+
 
 
 
