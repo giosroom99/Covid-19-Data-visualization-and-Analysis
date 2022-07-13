@@ -44,8 +44,7 @@ def get_countries():
             country_data = parse_json['data']
             for c in country_data:
                 lit_of_countries.append(c['country'])
-            lit_of_countries.append('US')
-            print("United State have been added to the list")
+           
 
             message="Countries Fetched"
             code ="Success"
