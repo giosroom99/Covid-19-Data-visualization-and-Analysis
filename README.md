@@ -21,6 +21,9 @@ Display covid-19 data for every continent and most their countries.
 Email: giosroom@gmail.com to request access to view dashboard. 
 
 # Sample Dashboards
+![image](https://user-images.githubusercontent.com/61130107/179611497-c7014fce-cf4b-4a90-9a5c-b957e3bdd19c.png)
+
+
 ### [Africa](https://snapshots.raintank.io/dashboard/snapshot/OWVvPMQMCkvlxg5m2hCEfYuU2yDI7T5x)
 ![Africa Dashboard](https://user-images.githubusercontent.com/61130107/178886166-98306692-1e75-4da5-9659-67d153e206d9.png)
 
