@@ -18,6 +18,9 @@ Display covid-19 data for every continent and most their countries.
 
 [Grafana Server](https://github.com/Moodkiller20/Covid-Case-Tracker./wiki/Grafana-Server)
 
+# Process Overview
+![image](https://github.com/Moodkiller20/Covid-19-Data-visualization-and-Analysis/blob/main/Dashboard%20screenshots/Blank%20diagram%20(1).png)
+
 Email: giosroom@gmail.com to request access to view dashboard. 
 
 # Sample Dashboards
